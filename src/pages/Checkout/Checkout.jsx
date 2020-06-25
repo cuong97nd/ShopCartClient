@@ -3,7 +3,7 @@ import "./Checkout.css";
 import Modal from "react-modal";
 import BuySomething from "../../ui/BuySomething/BuySomething";
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 const customStyles = {
   content: {
@@ -19,7 +19,7 @@ const customStyles = {
 
 class Checkout extends Component {
   state = {
-    name: "you",
+    name: "お客",
     email: "",
     country: "",
     modalIsOpen: false
@@ -39,32 +39,31 @@ class Checkout extends Component {
   };
 
   render() {
-
     if (!this.props.cart.length)
-      return <BuySomething message="Cart is empty to checkout!" />
+      return <BuySomething message="Cart is empty to checkout!" />;
 
     return (
       <div className="Checkout-Wrapper">
-        <h1 className="Checkout-Title">Checkout</h1>
+        <h1 className="Checkout-Title">ご会計</h1>
         <form className="Checkout-Form">
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="名前"
             onChange={this.onChangeHandler}
             className="Checkout-Input"
           />
           <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="メール"
             onChange={this.onChangeHandler}
             className="Checkout-Input"
           />
           <input
-            type="text"
-            name="country"
-            placeholder="Country"
+            type="number"
+            name="number"
+            placeholder="携帯電話"
             onChange={this.onChangeHandler}
             className="Checkout-Input"
           />
@@ -72,7 +71,7 @@ class Checkout extends Component {
             className="product-button Checkout-Button"
             onClick={this.openModal}
           >
-            Place order
+            注文
           </button>
         </form>
 
@@ -83,9 +82,9 @@ class Checkout extends Component {
           contentLabel="Thanks"
           ariaHideApp={false}
         >
-          <i className="fa fa-times Close-Modal" onClick={this.closeModal}></i>
-          <p style={{ color: "#000", padding: '20px' }}>
-            Thanks <strong>{this.state.name}</strong> for testing my simple Online Shopping Cart!
+          <i className="fa fa-times Close-Modal" onClick={this.closeModal} />
+          <p style={{ color: "#000", padding: "20px" }}>
+            <strong>{this.state.name}</strong>様。ご注文ありがとうございます。
           </p>
         </Modal>
       </div>
@@ -95,6 +94,9 @@ class Checkout extends Component {
 
 const mapStateToProps = state => ({
   cart: state.cart
-})
+});
 
-export default connect(mapStateToProps, null)(Checkout);
+export default connect(
+  mapStateToProps,
+  null
+)(Checkout);

@@ -23,12 +23,16 @@ const CartItem = props => {
           <button onClick={props.addItem} className="Quantity-Button">
             +
           </button>
-
         </td>
-        <td>${props.price}</td>
-        <td><i className="fa fa-times" onClick={props.removeWholeItem} style={{ color: 'red', cursor: 'pointer' }}></i></td>
+        <td>￥{props.price}</td>
+        <td>
+          <i
+            className="fa fa-times"
+            onClick={props.removeWholeItem}
+            style={{ color: "red", cursor: "pointer" }}
+          />
+        </td>
       </tr>
-
     </Fragment>
   );
 };
@@ -39,7 +43,7 @@ CartItem.propTypes = {
   price: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   addItem: PropTypes.func.isRequired,
-  removeItem: PropTypes.func.isRequired,
-}
+  removeItem: PropTypes.func.isRequired
+};
 
 export default CartItem;

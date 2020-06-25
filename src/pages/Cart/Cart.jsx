@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import "./Cart.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { addToCart, removeFromCart, removeWholeItem } from "../../store/actions/cart";
+import {
+  addToCart,
+  removeFromCart,
+  removeWholeItem
+} from "../../store/actions/cart";
 // Components
 import CartItem from "../../components/CartItem/CartItem";
 import BuySomething from "../../ui/BuySomething/BuySomething";
@@ -32,21 +36,20 @@ class Cart extends Component {
       />
     ));
 
-    if (!cartItems.length)
-      return <BuySomething />
+    if (!cartItems.length) return <BuySomething />;
 
     return (
       <div>
-        <h1 className="My-Cart-Title">My Cart:</h1>
+        <h1 className="My-Cart-Title">カード</h1>
         <div className="Cart-Products-Wrapper">
           <table className="Cart-Table">
             <thead>
               <tr>
-                <th>Photo</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price / Unit</th>
-                <th></th>
+                <th>写真</th>
+                <th>商品</th>
+                <th>数量</th>
+                <th>値段</th>
+                <th />
               </tr>
             </thead>
             <tbody>
@@ -59,14 +62,14 @@ class Cart extends Component {
                     fontWeight: "bold"
                   }}
                 >
-                  Total
+                  合計
                 </td>
                 <td />
                 <td />
                 <td>
-                  <p className="Total-Price">${totalPrice(this.props.cart)}</p>
+                  <p className="Total-Price">￥{totalPrice(this.props.cart)}</p>
                   <Link to="/checkout" className="Checkout-Button-Text">
-                    <div className="Checkout-Button">Checkout</div>
+                    <div className="Checkout-Button">会計</div>
                   </Link>
                 </td>
               </tr>

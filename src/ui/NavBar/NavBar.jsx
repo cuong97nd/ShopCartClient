@@ -1,8 +1,8 @@
-import React from 'react';
-import './NavBar.css';
+import React from "react";
+import "./NavBar.css";
 
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const totalPrice = cart => {
   return cart.reduce(
@@ -15,14 +15,14 @@ const NavBar = props => (
   <nav className="NavBar-Wrapper">
     <div>
       <Link to="/">
-       <p>ShopingReact</p>
-      </Link> 
+        <p>ショップ</p>
+      </Link>
     </div>
     <Link to="/cart">
       <div className="Cart-Info">
         <span className="Cart-Item-Counter">{props.cart.length}</span>
-        <i className="fa fa-shopping-bag"></i>
-        <p>Cart: ${totalPrice(props.cart)}</p>
+        <i className="fa fa-shopping-bag" />
+        <p>Cart: ￥{totalPrice(props.cart)}</p>
       </div>
     </Link>
   </nav>
@@ -32,4 +32,7 @@ const mapStateToProps = state => ({
   cart: state.cart
 });
 
-export default connect(mapStateToProps, null)(NavBar);
+export default connect(
+  mapStateToProps,
+  null
+)(NavBar);
