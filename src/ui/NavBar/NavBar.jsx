@@ -1,8 +1,10 @@
 import React from "react";
 import "./NavBar.css";
+import "../../components/UserDetail/UserDetail";
 
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import UserDetail from "../../components/UserDetail/UserDetail";
 
 const totalPrice = cart => {
   return cart.reduce(
@@ -12,20 +14,22 @@ const totalPrice = cart => {
 };
 
 const NavBar = props => (
-  <nav className="NavBar-Wrapper">
-    <div>
+  <div className="NavBar-Wrapper">
+    <div className="Logo">
       <Link to="/">
         <p>ショップ</p>
       </Link>
     </div>
-    <Link to="/cart">
-      <div className="Cart-Info">
+    <UserDetail />
+
+    <div className="Cart-Info">
+      <Link to="/cart">
         <span className="Cart-Item-Counter">{props.cart.length}</span>
         <i className="fa fa-shopping-bag" />
         <p>Cart: ￥{totalPrice(props.cart)}</p>
-      </div>
-    </Link>
-  </nav>
+      </Link>
+    </div>
+  </div>
 );
 
 const mapStateToProps = state => ({

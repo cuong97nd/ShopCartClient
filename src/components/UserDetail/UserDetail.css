@@ -1,0 +1,19 @@
+.Login-Google {
+  position: relative;
+  text-align: center;
+}
+.Profile-Wrapper {
+  display: flex;
+}
+.Profile-Img {
+  margin-top: 5px;
+  width: 50px;
+  border-radius: 50%;
+}
+p {
+  margin-top: 0px;
+}
+.Details {
+  margin-left: 1em;
+  align-self: center;
+}
