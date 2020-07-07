@@ -1,7 +1,8 @@
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
-  REMOVE_WHOLE_ITEM
+  REMOVE_WHOLE_ITEM,
+  REMOVE_ALL_ITEM
 } from "../actions/types";
 
 const initialState = [];
@@ -48,6 +49,8 @@ export default (state = initialState, action) => {
       return removeFromCart(state, action.payload);
     case REMOVE_WHOLE_ITEM:
       return removeWholeItem(state, action.payload);
+    case REMOVE_ALL_ITEM:
+      return [];
     default:
       return state;
   }

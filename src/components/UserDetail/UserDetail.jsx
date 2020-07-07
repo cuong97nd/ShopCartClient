@@ -1,21 +1,23 @@
 import React from "react";
 import "./UserDetail.css";
+import { connect } from "react-redux";
+import { logout, getUser } from "../../store/actions/user";
 
 function User(props) {
+  console.log(props);
+
   return (
     <div className="Profile-Wrapper">
       <div>
-        <img className="Profile-Img" src="http://placehold.it/150" alt="" />
+        <img className="Profile-Img" src={props.User.picture} alt="" />
       </div>
       <div className="Details">
-        <div>
-          <p>
-            Name <span>様</span>
-          </p>
-        </div>
-        <div>
-          <p>注文歴史</p>
-        </div>
+        <p>
+          {props.User.name} <span>様</span>
+        </p>
+
+        <button href="#">注文歴史</button>
+        <button onClick={() => props.logout()}> LogOut </button>
       </div>
     </div>
   );
@@ -37,6 +39,14 @@ function LoginGoogle(props) {
 }
 
 function UserDetail(props) {
-  return <LoginGoogle />;
+  return props.User.name ? <User {...props} /> : <LoginGoogle />;
 }
-export default UserDetail;
+
+const mapStateToProps = state => ({
+  User: state.user
+});
+
+export default connect(
+  mapStateToProps,
+  { logout }
+)(UserDetail);
