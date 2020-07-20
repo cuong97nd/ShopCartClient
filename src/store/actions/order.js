@@ -3,7 +3,7 @@ import { GET_ORDER, REMOVE_ORDER } from "./types";
 
 export const getOrder = token => async dispatch => {
   try {
-    const res = await axios("https://sever-ok--cuonhbui.repl.co/api/order", {
+    const res = await axios("https://severok-1.cuonhbui.repl.co/api/order", {
       headers: {
         jwt: token
       }

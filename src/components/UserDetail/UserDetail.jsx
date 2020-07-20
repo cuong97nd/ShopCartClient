@@ -38,9 +38,9 @@ function User(props) {
 function LoginGoogle(props) {
   return (
     <div className="Login-Google">
-      <a href="https://sever-ok--cuonhbui.repl.co/auth/google">
+      <a href="https://severok-1.cuonhbui.repl.co/auth/google">
         <div>
-          <i class="fa fa-google" />
+          <i className="fa fa-google" />
         </div>
         <div>
           <p>Login With Google</p>
