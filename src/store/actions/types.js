@@ -10,5 +10,6 @@ export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
 export const GET_USER = "GET_USER";
 export const UNAUTHORIZED = "UNAUTHORIZED";
 export const LOGOUT = "LOGOUT";
-
-//
+//order
+export const GET_ORDER = "GET_ORDER";
+export const REMOVE_ORDER = "REMOVE_ORDER";

@@ -4,6 +4,7 @@
 }
 .Profile-Wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 .Profile-Img {
   margin-top: 5px;
@@ -17,4 +18,5 @@ p {
   margin-left: 1em;
   align-self: center;
   display: flex;
-flex-direction: column}
+  flex-direction: column;
+}

@@ -6,11 +6,12 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
   line-height: 1.15;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .App {
@@ -19,7 +20,13 @@ html, body {
   flex-direction: column;
 }
 
-h1, h2, h3, h4, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6 {
   color: #252525;
   font-weight: 400;
 }
@@ -31,6 +38,9 @@ a {
 
 table {
   border-collapse: collapse;
+}
+button {
+  cursor: pointer;
 }
 
 button.product-button {

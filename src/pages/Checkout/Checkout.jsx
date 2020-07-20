@@ -20,7 +20,7 @@ const customStyles = {
 
 class Checkout extends Component {
   componentDidMount() {
-    this.props.order(this.props.user.sub, this.props.cart);
+    this.props.order(this.props.user.sub, this.props.cart,this.props.user.token);
   }
 
   render() {

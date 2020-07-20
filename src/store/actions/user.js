@@ -24,6 +24,11 @@ export const unauth = () => ({
   type: UNAUTHORIZED
 });
 
-export const logout = () => ({
-  type: LOGOUT
-});
+export const logout = () => dispatch => {
+  dispatch({
+    type: LOGOUT
+  });
+  dispatch({
+    type: LOGOUT
+  });
+};

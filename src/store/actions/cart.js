@@ -17,7 +17,7 @@ export const removeWholeItem = item => ({
   payload: item
 })
 
-export const order = (customer,cart) => async dispatch => {
+export const order = (customer,cart,token) => async dispatch => {
   try {
     await axios({
       method: 'post',
@@ -25,6 +25,9 @@ export const order = (customer,cart) => async dispatch => {
       data: {
         customer: customer,
         cart : cart
+      },
+      headers: {
+        jwt: token
       }
     });
     

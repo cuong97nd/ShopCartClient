@@ -1,11 +1,17 @@
 import React from "react";
 import "./UserDetail.css";
 import { connect } from "react-redux";
-import { logout, getUser } from "../../store/actions/user";
+import { logout } from "../../store/actions/user";
+import { removeOrder } from "../../store/actions/order";
+
+import { Link } from "react-router-dom";
+
+function logoutButtan(a, b) {
+  a();
+  b();
+}
 
 function User(props) {
-  console.log(props);
-
   return (
     <div className="Profile-Wrapper">
       <div>
@@ -16,8 +22,14 @@ function User(props) {
           {props.User.name} <span>様</span>
         </p>
 
-        <button href="#">注文歴史</button>
-        <button onClick={() => props.logout()}> LogOut </button>
+        <button>
+          <Link to="/order">注文歴史</Link>
+        </button>
+
+        <button onClick={() => logoutButtan(props.logout, props.removeOrder)}>
+          {" "}
+          LogOut{" "}
+        </button>
       </div>
     </div>
   );
@@ -48,5 +60,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logout }
+  { logout, removeOrder }
 )(UserDetail);

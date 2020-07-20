@@ -11,13 +11,10 @@ import Products from "../../components/Products/Products";
 class Home extends Component {
   componentDidMount() {
     this.props.fetchProducts();
-    console.log("aaaaaaaaaaaaaaaaaa");
-    console.log(this.props);
   }
 
   render() {
     var query = queryString.parse(this.props.location.search);
-    console.log("token " + query.token);
     if (query.token) {
       this.props.getUser(query.token);
     }
